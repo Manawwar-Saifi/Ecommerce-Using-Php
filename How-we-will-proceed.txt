@@ -1,0 +1,32 @@
+Resgister funcitonality
+Login funcitonality
+
+Admin
+
+Adding category
+Displaying Category
+Edit category
+Delete category
+
+Adding Proudct with category
+Displaying Products
+Editing Product
+Deleteing Product
+
+Displaying Proudcts and Category on the user side
+Creating proudct cards
+Adding to Card funcitonality
+Creating CRUD inside the Carts funcitonality
+Creating Checkout Functionlity 
+Adding A payment gateway Functionlity
+Payment Confirm
+Your Order
+Order Tracking
+
+Adding Forget Password and Recovery Functionlity
+CRUD Operation inside User Profile
+
+Image CRUD Operation 
+
+
+
