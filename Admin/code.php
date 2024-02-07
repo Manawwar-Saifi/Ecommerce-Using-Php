@@ -48,5 +48,64 @@ if(isset($_POST['add-category-btn']))
 }
 
 
+// Edit Category
+
+if(isset($_POST['edit-category-btn']))
+{
+
+    $cid = $_POST['cid'];
+    $name = $_POST['name'];
+    $slug = $_POST['slug'];
+    $description = $_POST['description'];
+    $status = isset($_POST['status']) ? "1" : "0";
+    $popular = isset($_POST['popular']) ? "1" : "0";
+    $meta_title = $_POST['meta_title'];
+    $meta_description = $_POST['meta_description'];
+    $meta_keywords = $_POST['meta_keywords'];
+    
+    $filename = $_FILES['image']['name'];
+    $filename_ext = pathinfo($filename,PATHINFO_EXTENSION);
+    $path = "../uploads";
+    $newImageName = time().".".$filename_ext;
+    
+    $old_image = $_POST['old_name'];
+
+    if($filename!="")
+    {
+        $update_image_name = $newImageName;
+    }
+    else
+    {
+        $update_image_name = $old_image;
+    }
+
+    $categories_update_query = "UPDATE category SET name='$name',slug='$slug',description='$description',status='$status',popular='$popular',meta_title='$meta_title',meta_description='$meta_description',meta_keywords='$meta_keywords',image='$update_image_name' WHERE id='$cid'";
+    
+    $categories_update_query_run = mysqli_query($con,$categories_update_query);
+
+    if($categories_update_query_run)
+    {
+        if($_FILES['image']['name']!="")
+        {
+            move_uploaded_file($path, $path."/".$newImageName);
+            if(file_exists($old_image))
+            {
+                unlink("../uploads/".$old_image);
+            }
+        }
+        redirect("edit-category.php?id=$cid","Category Updated Successfully");
+    }
+    else
+    {
+        redirect("edit-category.php?id=$cid","Something went wrong.");  
+    }
+
+}
+
+else
+{
+    redirect("edit-category.php?id=$cid","Something Went Wrong");
+}
+
 
 ?>
