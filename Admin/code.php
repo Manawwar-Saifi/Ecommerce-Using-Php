@@ -102,6 +102,37 @@ if(isset($_POST['edit-category-btn']))
 
 }
 
+// Deleting Category with AJAX
+
+if(isset($_POST['category_delete_btn']))
+{
+
+    $category_id = mysqli_real_escape_string($con,$_POST['category_id']);// here Category Id Coming From the AJAX
+
+    $category_query = "SELECT * FROM category WHERE id='$category_id'";
+    $category_query_run = mysqli_query($con, $category_query);
+
+    $category_data = mysqli_fetch_array($category_query_run);
+    $image = $category_data['image'];
+
+    $c_delete_query = "DELETE FROM category WHERE id='$category_id'";
+    $c_delete_query_run = mysqli_query($con,$c_delete_query);
+
+    if($c_delete_query_run)
+    {
+        if(file_exists("../image_uploads/".$image))
+        {
+            unlink($image);
+        }
+        echo 200;
+    }
+    else
+    {
+        echo 500;
+    }
+
+}
+
 else
 {
     redirect("edit-category.php?id=$cid","Something Went Wrong");

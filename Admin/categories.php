@@ -17,9 +17,8 @@ include('../config/dbcon.php');
                             <div class="card-header text-center">
                                 <h4>Categories</h4>
                             </div>
-                        </div>
-
-                        <table class="table table-bordered table-striped mt-2">
+                            <div class="card-body" id="category_table">
+                            <table class="table table-bordered table-striped mt-2">
                             <thead>
                                 <tr>
                                 <th scope="col">Id</th>
@@ -66,6 +65,10 @@ include('../config/dbcon.php');
                                 
                             </tbody>
                         </table>
+                            </div>
+                        </div>
+
+                        
                     </div>
                 </div>
                 

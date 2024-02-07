@@ -6,11 +6,10 @@ $(document).ready(function () {
 
         id = $(this).val()
 
-       alert(id);
 
        swal({
         title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
+        text: "Once deleted, you will not be able to recover.",
         icon: "warning",
         buttons: true,
         dangerMode: true,
@@ -25,12 +24,19 @@ $(document).ready(function () {
                 'category_delete_btn':true
             },
             success: function (response) {
-                
+                console.log(response);
+                if(response==200)
+                {
+                    swal("Good job!", "Category Deleted Successfully", "success");
+                    $('#category_table').load(location.href+" #category_table")
+                }
+                else if(response==500)
+                {
+                    swal("Error!", "Something went wrong", "error");
+                }
             }
           });
-        } else {
-          swal("Your imaginary file is safe!");
-        }
+        } 
       });
 
     });
