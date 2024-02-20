@@ -1,9 +1,8 @@
 <?php 
 // session_start();
 include ('includes/header.php');
-if($_SESSION['loggedin'] = true && !$_SESSION['role'] == 1)
+if(!isset($_SESSION['loggedin']) && !$_SESSION['loggedin'] == true && !$_SESSION['role'] == 1)
 {
-    
     $_SESSION['message'] = "You are not aurized for the page";
     header('Location: ../index.php');
 }
@@ -20,7 +19,7 @@ if($_SESSION['loggedin'] = true && !$_SESSION['role'] == 1)
                         <div class="card">
                             <div class="card-header text-center">
                                 <h4>Index File</h4>
-                                <?= $_SESSION['role'];?>
+                                <h2> <span>Welcome Admin </span><?= $_SESSION['username'];?></h2> 
                             </div>
                           
                         </div>
