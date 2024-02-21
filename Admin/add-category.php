@@ -14,7 +14,7 @@ include ('includes/header.php');?>
                                 <h4>Add Category</h4>
                             </div>
                             <div class="card-body">
-                            <form action="code.php" method="POST" enctype="multipart/form-data">
+                            <form action="code.php" method="POST" enctype="multipart/form-data" class="forms">
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Name</label>
                                         <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -52,7 +52,7 @@ include ('includes/header.php');?>
                                     </div>
                                    
                                    
-                                    <button type="submit" name="add-category-btn" class="btn btn-primary">Submit</button>
+                                    <button type="submit" name="add-category-btn" class="btn btn-primary">Add Category</button>
                             </form>
                             </div>
                         </div>

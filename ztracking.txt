@@ -1,0 +1,24 @@
+id 
+category_id
+name
+slug
+small_description
+description
+original_price
+selling_price
+image
+qty
+status
+trending
+meta_title
+meta_keywords
+meta_description
+created_at
+updated_at
+
+sntdashwebsite
+Support@1
+Oktrythis@1
+
+start from video number 19 on start: Date 13/1/24
+
