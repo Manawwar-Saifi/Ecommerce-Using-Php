@@ -20,7 +20,7 @@ include ('../functions/myFun.php');
                                     
                                     <div class="mb-3">
                                         <label for="">Select Category</label>
-                                    <select class="form-select mt-2" aria-label="Default select example">
+                                    <select class="form-select mt-2" name="prod_category" aria-label="Default select example">
                                         <option selected>Uncategorized</option>
 
                                         <?php 
@@ -79,14 +79,14 @@ include ('../functions/myFun.php');
                                     </div>
                                     <div class="mb-3 d-flex gap-5">
                                         <label for="exampleInputPassword1"  class="form-label">Status</label>
-                                            <input type="checkbox" name="status" class="form-control">
+                                            <input type="checkbox" name="status" >
                                             <label for="exampleInputPassword1" class="form-label">trending</label>
-                                            <input type="checkbox" name="trending" class="form-control">
+                                            <input type="checkbox" name="trending" >
                                     </div>
                                     
                                     <div class="mb-3">
                                         <label for="exampleInputPassword1" class="form-label">Meta Title</label>
-                                        <input type="text" class="form-control" name="meta_title">
+                                        <input type="text" class="form-control" name="meta_title" name="meta_title">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputPassword1" class="form-label">Meta Description</label>

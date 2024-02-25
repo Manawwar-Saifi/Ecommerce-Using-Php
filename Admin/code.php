@@ -133,6 +133,53 @@ if(isset($_POST['category_delete_btn']))
 
 }
 
+// Adding Product
+
+else if(isset($_POST['add-product-btn']))
+{
+    $prod_category = $_POST['prod_category'];
+    $product_name = $_POST['name'];
+    $product_slug = $_POST['slug'];
+    $product_small_description = $_POST['small_description'];
+    $product_description = $_POST['description'];
+    $product_original_price = $_POST['original_price'];
+    $product_selling_price = $_POST['selling_price'];
+    $product_qty = $_POST['qty'];
+    $product_status = isset($_POST['status']) ? "1" : "0";
+    $product_trending = isset($_POST['trending']) ? "1" : "0";
+    $product_meta_title = $_POST['meta_title'];
+    $product_meta_description = $_POST['meta_description'];
+    $product_meta_keywords = $_POST['meta_keywords'];
+    
+    $image = $_FILES['image']['name'];//filed name of image and name of image
+    $path = "../uploads";//path for the image saving
+    $image_ext = pathinfo($image, PATHINFO_EXTENSION);//this give us image extension
+    $filename = time().'.'.$image_ext;
+    
+    if($product_name!="" || $product_slug!="" || $product_selling_price!="")
+    {
+
+        $product_insert_query = "INSERT INTO products 
+        (category_id, name, slug, small_description, description, original_price, selling_price, image, qty, status, trending, meta_title, meta_description, meta_keywords) VALUES 
+        ('$prod_category','$product_name','$product_slug','$product_small_description','$product_description','$product_original_price','$product_selling_price','$filename','$product_qty','$product_status','$product_trending','$product_meta_title','$product_meta_description','$product_meta_keywords')";
+
+        $product_insert_query_run  = mysqli_query($con, $product_insert_query);
+
+        if($product_insert_query_run)
+        {
+            move_uploaded_file($_FILES['image']['tmp_name'], $path.'/'.$filename);
+            redirect("add-product.php","Product added Successfully");
+        }
+        else 
+        {
+            redirect("add-product.php","Something went wrong");
+
+        }
+
+    }
+
+}
+
 else
 {
     redirect("edit-category.php?id=$cid","Something Went Wrong");

@@ -6,15 +6,15 @@
             <a href="index.php" class="text-decoration-none text-white"> <li class="bg-danger m-2 px-3 py-2 text-center rounded">Dashboard</li></a>
                 <a href="categories.php" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">All Categories</li></a>
                 <a href="add-category.php" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">Add Category</li></a>
-                <a href="" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">All Produt</li></a>
+                <a href="products.php" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">All Produt</li></a>
                 <a href="add-product.php" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">Add Products</li></a>
-                <a href="" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">One</li></a>
+                <a href="" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">one</li></a>
                 <a href="" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">Two</li></a>
                 <a href="" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">Three</li></a>
                 <a href="" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">Four</li></a>
                 <a href="" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">Five</li></a>
                 <li class="m-2 px-auto">
-                <form action="../functions/authcode.php" method="POST">
+                <form action="functions/authcode.php" method="POST">
                     <button type="submit" name="logoutbtn" class="btn btn-primary w-100">LOGOUT</button>
                 </form>    
                 <!-- <button class="btn btn-primary">Another</button></li> -->
