@@ -14,7 +14,7 @@
                 <a href="" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">Four</li></a>
                 <a href="" class="text-decoration-none text-white"><li class="bg-danger m-2 px-3 py-2 text-center rounded">Five</li></a>
                 <li class="m-2 px-auto">
-                <form action="functions/authcode.php" method="POST">
+                <form action="../functions/authcode.php" method="POST">
                     <button type="submit" name="logoutbtn" class="btn btn-primary w-100">LOGOUT</button>
                 </form>    
                 <!-- <button class="btn btn-primary">Another</button></li> -->

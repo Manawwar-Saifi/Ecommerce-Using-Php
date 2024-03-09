@@ -119,6 +119,11 @@ else if(isset($_POST['login_btn']))
                             $_SESSION['message'] = "Welcome Admin.";
                             header('Location: ../Admin/index.php');  
                         }
+                        else
+                        {
+                            $_SESSION['message'] = "Something went wrong.";
+                                header('Location: ../index.php');
+                        }
                     } 
                     else 
                     {

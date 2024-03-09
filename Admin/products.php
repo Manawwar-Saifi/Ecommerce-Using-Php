@@ -17,6 +17,11 @@ include ('../functions/myFun.php');
                                     <h4>Edit Product</h4>
                                 </div>
                                 <div class="card-body">
+                                    <?php
+                                            $result = getAll("products");
+                                            if(mysqli_num_rows($result) > 0)
+                                            {
+                                    ?>
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -34,9 +39,7 @@ include ('../functions/myFun.php');
                                 
                                     <tbody>
                                     <?php 
-                                    $result = getAll("products");
-                                    if(mysqli_num_rows($result) > 0)
-                                    {
+                                    
                                         foreach($result as $data)
                                         {
                                             ?>
@@ -48,8 +51,13 @@ include ('../functions/myFun.php');
                                                 <td><?=$data['qty']?></td>
                                                 <td><?=$data['status']==1 ? "Hidden" : "Visible"?></td>
                                                 <td><?=$data['selling_price']?></td>
-                                                <td><button class="btn btn-success btn-sm">Edit</button></td>
-                                                <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                                <td><a href="edit-product.php?id=<?= $data['id']?>"><button class="btn btn-success btn-sm">Edit</button></a></td>
+                                                <td>
+                                                    <form action="code.php" method="POST">
+                                                        <input type="hidden" name="prod_id" value="<?= $data['id']?>">
+                                                         <button class="btn btn-danger btn-sm delete_product_btn" name="delete-product-btn" >Delete</button>
+                                                    </form>
+                                                </td>
                                                 </tr>
                                             <?php
 
@@ -58,7 +66,9 @@ include ('../functions/myFun.php');
                                     }
                                     else
                                     {
-                                        redirect("products.php","Something went wrong");
+                                        ?>
+                                        <h2 class="text-center">Product Table Empty Now.</h2>
+                                        <?php
                                     }
                                     ?>
                                         

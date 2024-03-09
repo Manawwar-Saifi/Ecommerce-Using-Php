@@ -1,11 +1,29 @@
 <?php 
-// session_start();
-include ('includes/header.php');
-if(!isset($_SESSION['loggedin']) && !$_SESSION['loggedin'] == true && !$_SESSION['role'] == 1)
+
+
+session_start();
+
+if(!isset($_SESSION['loggedin']) && !$_SESSION['loggedin'] == true) 
 {
-    $_SESSION['message'] = "You are not aurized for the page";
-    header('Location: ../index.php');
+    $_SESSION['message'] = "Log In to Continue"; 
+    header('Location: ../index.php'); 
 }
+else
+{
+    if($_SESSION['role']==0)
+    {
+        
+        $_SESSION['message'] = "You are not aurized for the page"; 
+        header('Location: ../index.php'); 
+        
+    }
+}
+
+
+include ('includes/header.php');
+
+
+
 ?>
     <div class="container-fluid">
         <div class="row">
@@ -18,7 +36,9 @@ if(!isset($_SESSION['loggedin']) && !$_SESSION['loggedin'] == true && !$_SESSION
                     <div class="col-md-9">
                         <div class="card">
                             <div class="card-header text-center">
-                                <h4>Index File</h4>
+                                
+        
+                                <h4>Index File </h4>
                                 <h2> <span>Welcome Admin </span><?= $_SESSION['username'];?></h2> 
                             </div>
                           

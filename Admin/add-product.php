@@ -1,6 +1,8 @@
 <?php 
+session_start();
 include ('includes/header.php');
 include ('../functions/myFun.php');
+
 ?>
     <div class="container-fluid">
         <div class="row">
@@ -21,17 +23,19 @@ include ('../functions/myFun.php');
                                     <div class="mb-3">
                                         <label for="">Select Category</label>
                                     <select class="form-select mt-2" name="prod_category" aria-label="Default select example">
-                                        <option selected>Uncategorized</option>
 
                                         <?php 
                                         
                                         $result = getAll("category");
                                         if($result) 
                                         {
+                                            ?>
+                                            <option>Uncategorized</option>
+                                            <?php
                                             foreach($result as $data)
                                             {
                                                 ?>
-                                                <option value="<?= $data['id'] ?>"><?= $data['name'] ?></option>
+                                                <option value="<?= $data['name'] ?>"><?= $data['name'] ?></option>
                                                 
                                                 <?php
 

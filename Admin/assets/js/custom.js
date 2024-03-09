@@ -1,6 +1,6 @@
 $(document).ready(function () {
    
-    
+    // deleting category
     $(document).on('click','.category_delete_btn',function (e) {
         e.preventDefault();
 
@@ -41,7 +41,8 @@ $(document).ready(function () {
 
     });
    
-
+    // deleting product
+ 
      
 
 
