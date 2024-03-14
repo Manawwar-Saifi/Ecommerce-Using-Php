@@ -34,7 +34,7 @@ include('config/dbcon.php');
 
                     <?php 
                     $cate_id = $_GET['id'];
-                    $products = "SELECT * FROM products WHERE category_id='$cateName'";
+                    $products = "SELECT * FROM products WHERE category_id='$cateName' AND status=0";
                     $products_run = mysqli_query($con, $products);
                     
                     if(mysqli_num_rows($products_run) > 0)

@@ -14,10 +14,13 @@
             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)
             {
               ?>
-              <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <li class="nav-item dropdown">
+              
+                      <a class="nav-link dropdown-toggle text-white d-line" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <span>Welcome </span><?= isset($_SESSION['username']) ? $_SESSION['username'] : " " ?>
+                      
                       </a>
+                      
                       <ul class="dropdown-menu text-white">
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -28,9 +31,9 @@
                           </form>
                       
                       </li>
-                      </ul>
                     </li>
-           
+                   
+                  </ul>
               <?php
             }
             else 
@@ -46,6 +49,7 @@
 
             }
           ?>
+          
         
         
         
@@ -54,3 +58,19 @@
     </div>
   </div>
 </nav>
+
+<div class="normal-header" style="background-color:black;" >
+
+<div class="contaienr">
+            <div class="row justify-content-center align-items-center pt-2">
+              <div class="col-md-8 d-flex justify-content-between align-items-center p-2 text-white">
+                <h4>Home</h4>
+                <h4>About</h4>
+                <h4>Products</h4>
+                <h4>Services</h4>
+                <h4>Contact</h4>
+                <a href="carts.php"><h4>Cart</h4></a>
+              </div>
+            </div>
+          </div>
+</div>

@@ -1,6 +1,7 @@
 <?php 
 include ('includes/header.php');
 include ('../functions/myFun.php');
+include('../config/dbcon.php');
 ?>
     <div class="container-fluid">
         <div class="row">
@@ -18,7 +19,9 @@ include ('../functions/myFun.php');
                                 </div>
                                 <div class="card-body">
                                     <?php
-                                            $result = getAll("products");
+                                            $query = "SELECT * FROM products";
+                                            $result  = mysqli_query($con,$query);
+                                           
                                             if(mysqli_num_rows($result) > 0)
                                             {
                                     ?>

@@ -107,6 +107,7 @@ else if(isset($_POST['login_btn']))
                         $_SESSION['username'] = $user['name'];
                         $_SESSION['useremail'] = $user['email'];
                         $_SESSION['role'] = $user['role_as'];
+                        $_SESSION['id'] = $user['id'];
 
                         // Redirect to user dashboard or home page
                         if($_SESSION['role']==0)
