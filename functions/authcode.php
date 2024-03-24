@@ -159,6 +159,7 @@ else if(isset($_POST['logoutbtn']))
     session_start();
     session_unset();
     session_destroy();
+    $_SESSION['message'] = "Logged out sucessfully";
     header('Location: ../login.php');
 }
 

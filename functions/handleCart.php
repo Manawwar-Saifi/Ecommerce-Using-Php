@@ -25,9 +25,9 @@ if(isset($_SESSION['loggedin']))
 
                 if(mysqli_num_rows($chk_exist_run) > 0)
                 {
-                    $qty++;
+                    $Nqty = $qty++;
                     $update_qty ="UPDATE carts
-                    SET prod_qty = '$qty'
+                    SET prod_qty = '$Nqty'
                     WHERE prod_id='$prod_id' AND user_id='$user_id' ";
                     $update_qty_run = mysqli_query($con, $update_qty);
                     if($update_qty_run)
@@ -54,8 +54,25 @@ if(isset($_SESSION['loggedin']))
                         }
                 }
                 break;
+
+                case "delete":
+                    $cid = $_POST['cid'];
+                    $user_id = $_SESSION['id'];
+
+                    $delete_cart_product = "DELETE FROM carts WHERE id='$cid' AND user_id='$user_id'";
+                    $delete_cart_product_run = mysqli_query($con, $delete_cart_product);
+                        if($delete_cart_product_run)
+                        {
+                            echo 201;
+                        }
+                        else
+                        {
+                            echo 500;
+                        }
+                    break;
                 default:
                 echo 501;
+                break;
 
         }
     }

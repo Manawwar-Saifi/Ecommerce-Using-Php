@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+session_start();
 include ('includes/header.php');
 include('config/dbcon.php');
 ?>
@@ -70,5 +70,5 @@ include('config/dbcon.php');
 
 
     </div>
-   
+
 <?php include('includes/footer.php');?>

@@ -64,12 +64,20 @@
 <div class="contaienr">
             <div class="row justify-content-center align-items-center pt-2">
               <div class="col-md-8 d-flex justify-content-between align-items-center p-2 text-white">
-                <h4>Home</h4>
+                <a href="index.php"><h4>Home</h4></a>
                 <h4>About</h4>
-                <h4>Products</h4>
+                <a href="allproducts.php"><h4>All Products</h4></a>
                 <h4>Services</h4>
                 <h4>Contact</h4>
-                <a href="carts.php"><h4>Cart</h4></a>
+                <?php
+                  if(isset($_SESSION['loggedin']))
+                  {
+                    ?>
+                    <a href="carts.php"><h4>Cart</h4></a>
+                    <?php
+                  }
+                ?>
+                
               </div>
             </div>
           </div>

@@ -38,3 +38,20 @@ cursor: pointer;
 {
 cursor: pointer;
 }
+
+
+
+.allproductsdiv{
+    position: relative;
+}
+
+.allproductsdiv .products-addtocart
+{
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    left: 0px;
+    transition: .3s;
+
+}
+
