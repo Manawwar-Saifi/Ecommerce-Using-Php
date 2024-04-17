@@ -60,7 +60,7 @@ include('functions/userFunctions.php');
                             <th scope="colspan-1"> &#8377;<?=$totalPrice?></th>
                             </tr>
                             <td>
-                       <a href="checkout.php"> <button class="btn btn-warning">
+                       <a href="checkout.php"> <button class="btn btn-outline-warning">
                             Process To Checkout
                         </button></a>
                         <?php
@@ -75,19 +75,13 @@ include('functions/userFunctions.php');
                 }
                         
                         
-                    }        
+        }        
                    
         ?>    
                     </tbody>
                 </table>
-
-
-
             </div>
-            </div>
-       
-       
-        
+        </div>
     </div>
    
 <?php include('includes/footer.php');?>

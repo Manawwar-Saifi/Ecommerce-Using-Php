@@ -74,6 +74,7 @@
                   {
                     ?>
                     <a href="carts.php"><h4>Cart</h4></a>
+                    <a href="my-orders.php"><h4>My Order</h4></a>
                     <?php
                   }
                 ?>

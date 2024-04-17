@@ -2,6 +2,7 @@
 session_start();
 include ('includes/header.php');
 include('config/dbcon.php');
+include('functions/userFunctions.php');
 ?>
 
     <div class="main">
@@ -38,7 +39,7 @@ include('config/dbcon.php');
         <!-- CATEGORIES -->
 
         <div class="container my-5">
-            <div class="row">
+            <div class="row flex-wrap d-flex">
                     <h4 class="text-center p-4 text-danger text-uppercase fs-2">Categories</h4>
 
                     <?php 
@@ -75,6 +76,35 @@ include('config/dbcon.php');
         </div>
 
 
+        <!-- Trending Products -->
+
+                <h4 class="text-center">Trending Products</h4>
+            <div class="container">
+                <div class="row flex-wrap d-flex">
+                <?php
+       $trendingProducts = getAllTrending();
+       if(mysqli_num_rows($trendingProducts) > 0)
+       {
+        foreach($trendingProducts as $item)
+        {
+            ?>
+
+                    <div class="card mx-2 my-3" style="width: 18%;"> 
+
+                    <a href="Single_product.php?id=<?=$item['id']?>"> <img src="uploads/<?= $item['image'];?>" class="card-img-top" alt="Products Image"></a>
+                    <a href="Single_product.php?id=<?=$item['id']?>"> <div class="card-body">
+                        <h5 class="card-title"><?= $item['name'];?></h5>
+                    </div></a>
+                    </div>
+
+                            <?php
+        }
+       }
+        ?>
+                </div><!--ROW-->
+            </div>
+            
+        
     </div>
    
 <?php include('includes/footer.php');?>

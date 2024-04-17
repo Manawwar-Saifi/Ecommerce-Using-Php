@@ -64,6 +64,7 @@ if(isset($_SESSION['loggedin']))
                         if($delete_cart_product_run)
                         {
                             echo 201;
+                           
                         }
                         else
                         {

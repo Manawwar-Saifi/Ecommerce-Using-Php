@@ -22,3 +22,44 @@ Oktrythis@1
 
 start from video number 19 on start: Date 13/1/24
 
+video 29
+
+
+
+
+
+ORders TABLE
+
+tracking_no
+user_id
+name
+email
+phone
+address
+pincode
+total_price
+payment_mode
+payment_id
+status
+comments
+created_at
+ 
+
+
+ ORDER ITEMS TABLE
+
+ order_id
+ prod_id
+ qty
+ price
+ created_at
+
+
+
+
+
+
+Filters using Database
+payment intigration
+sending order confirmation
+increase the qty if product already in cart

@@ -71,8 +71,7 @@ include('config/dbcon.php');
                                     <h5 class="card-title"><?= $data['name'];?></h5>
                                 </div></a>
 
-                                <Button class="w-10 btn btn-warning products-addtocart">Add To Cart</Button>
-                                <button class="btn btn-warning products-addtocart btn-xs" value="<?= $data['id']?>"  id="AddToCart">Add To Cart</button>
+                                <button class="btn btn-warning products-addtocart btn-xs" value="<?= $data['id']?>" >Add To Cart</button>
                             </div>
                             <?php
 

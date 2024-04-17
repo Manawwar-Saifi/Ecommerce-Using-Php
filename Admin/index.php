@@ -41,7 +41,11 @@ include ('includes/header.php');
                                 <h4>Index File </h4>
                                 <h2> <span>Welcome Admin </span><?= $_SESSION['username'];?></h2> 
                             </div>
-                          
+
+                            <div class="card-body text-center">
+                                <a href="../index.php" class="btn btn-primary">User Home</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
